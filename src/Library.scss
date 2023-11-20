@@ -1,0 +1,16 @@
+:root {
+  --whiteColor: white;
+}
+
+body {
+  color: black;
+  font-family: "Roboto";
+
+  .button {
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: #f2f2f2;
+    }
+  }
+}
