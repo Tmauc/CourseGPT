@@ -4,8 +4,8 @@ import { Routes, Route } from "react-router-dom";
 import { GlobalFonts } from "./assets/styles/fonts";
 import { GlobalResetStyle } from "./assets/styles/cssReset";
 
-import OtherPage from "./pages/OtherPage";
-import Home from "./Home";
+import Course from "./pages/Course/Course";
+import Home from "./pages/Home/Home";
 import "./Library.scss";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
       <GlobalResetStyle />
       <Routes>
         <Route path="/" exact element={<Home />} />
-        <Route path="/otherPage" element={<OtherPage />} />
+        <Route path="/course" element={<Course />} />
       </Routes>
     </>
   );

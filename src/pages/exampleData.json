@@ -1,0 +1,40 @@
+{
+  "cours": {
+    "titre": "Prochaine étape avec NextJs : Les routes dynamiques",
+    "introduction": "Dans ce cours, nous allons explorer l'un des aspects les plus puissants de NextJs : les routes dynamiques. Que vous développiez un blog, un magasin en ligne ou une autre application Web, vous devrez presque toujours manipuler les routes. Découvrons comment NextJs rend cet aspect du développement Web à la fois simple et efficace.",
+    "notion": {
+      "nom": "Les routes dynamique",
+      "description": "Les routes dynamiques sont des fonctionnalités de NextJs qui permettent de créer des routes à la volée. Plutôt que d'avoir un fichier pour chaque page, vous pouvez avoir un fichier qui peut traiter plusieurs routes en fonction des paramètres passés dans l'URL.",
+      "exemples": [
+        {
+          "exemple": "Créer une route dynamique pour les articles de blog",
+          "code": "pages/posts/[id].js",
+          "desc": "Dans cet exemple, [id] est un paramètre de route. Pour chaque ID unique, un fichier HTML unique est généré au moment de la construction."
+        },
+        {
+          "exemple": "Naviguer vers une route dynamique",
+          "code": "{pathname: '/posts', query: {id: '1'}}",
+          "desc": "Nous utilisons l'objet Link de NextJs pour naviguer. Nous passons un objet à l'attribut href, indiquant le chemin et la requête."
+        }
+      ]
+    }
+  },
+  "exercices": [
+    {
+      "id": 1,
+      "consigne": "Créez une page de blog avec des routes dynamiques pour chaque article. L'ID de chaque article doit être inclus dans l'URL.",
+      "solution": {
+        "explication": "Commencez par créer un nouveau fichier appelé [id].js dans le dossier pages/posts. Ensuite, utilisez le hook useRouter de NextJs pour accéder aux paramètres de requête et récupérer l'ID. Enfin, utilisez cet ID pour récupérer les données de l'article et les afficher sur la page.",
+        "code": "import { useRouter } from 'next/router';\n\nexport default function Post() {\n  const router = useRouter();\n  const { id } = router.query;\n\n  return <h1>Post: {id}</h1>\n}"
+      }
+    },
+    {
+      "id": 2,
+      "consigne": "Créez une liste de tous les articles de blog. Chaque élément de la liste doit être un lien qui navigue vers la page de l'article correspondant.",
+      "solution": {
+        "explication": "Pour ce faire, vous avez besoin du composant Link de NextJs. Pour chaque article, retournez un élément de liste avec un lien vers /posts/[id]. Replacez [id] par l'ID de l'article.",
+        "code": "import Link from 'next/link';\n\nexport default function PostsList({ posts }) {\n  return (\n    <ul>\n      {posts.map((post) => (\n        <li key={post.id}>\n          <Link href={`/posts/${post.id}`}>{post.title}</Link>\n        </li>\n      ))}\n    </ul>\n  );\n}"
+      }
+    }
+  ]
+}

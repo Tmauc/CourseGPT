@@ -1,0 +1,41 @@
+Génère directement un JSON complet, sans aucun texte introductif ou commentaire, structuré permettant une récupération dynamique des données,
+contenant un cours et des exercices sur la thématique Z avec une notion X, dans la langue W. Voici les spécifications :
+
+- Thématique (Z) : [THEME]
+- Notion (X) : [NOTION]
+- Langue (W) : [LANGUAGE]
+
+{
+  "cours": {
+    "titre": "[Titre en lien avec Z]",
+    "introduction": "[Introduction brève sur Z]",
+    "notion": {
+      "nom": "[Nom de la notion X]",
+      "description": "[Description détaillée de X]",
+      "exemples": [
+        {
+          "exemple": "[Description de l'exemple 1]",
+          "code": "[Code pour l'exemple 1]"
+          "desc": "[Commentaire du code, si besoin, pour l'exemple 1]"
+        },
+        // Ajouter d'autres exemples
+      ]
+    }
+  },
+  "exercices": [
+    {
+      "id": 1,
+      "consigne": "[Consigne pour l'exercice 1]",
+      "solution": {
+        "explication": "[Explication de la solution pour l'exercice 1]",
+        "code": "[Code de la solution pour l'exercice 1]"
+      }
+    },
+    // Ajouter d'autres exercices
+  ]
+}
+
+Assurez-toi que le JSON soit bien structuré et complet, respectant les spécifications de Z, X, Y et W,
+sans introductions ou commentaires supplémentaires, que chaque section, comme les exemples ou les exercices,
+soit un tableau pour faciliter l'ajout ou la modification dynamique des données, il doit aussi être bien formater afin de pouvoir l'afficher proprement dans un editeur de code.
+Chaque exercice doit avoir un ID unique pour une identification facile.
